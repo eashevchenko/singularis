@@ -1,0 +1,102 @@
+
+singularis.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Idle
+  rotate: false
+  xy: 2, 456
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 0
+Idle
+  rotate: false
+  xy: 2, 2
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 1
+Idle
+  rotate: false
+  xy: 453, 456
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 2
+Idle
+  rotate: false
+  xy: 453, 2
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 3
+
+singularis2.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Idle
+  rotate: false
+  xy: 2, 456
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 4
+Idle
+  rotate: false
+  xy: 2, 2
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 5
+Idle
+  rotate: false
+  xy: 453, 456
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 6
+Idle
+  rotate: false
+  xy: 453, 2
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 7
+
+singularis3.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Idle
+  rotate: false
+  xy: 2, 456
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 8
+Idle
+  rotate: false
+  xy: 2, 2
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 9
+Idle
+  rotate: false
+  xy: 453, 456
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 10
+Idle
+  rotate: false
+  xy: 453, 2
+  size: 449, 452
+  orig: 449, 452
+  offset: 0, 0
+  index: 11
