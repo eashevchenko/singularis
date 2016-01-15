@@ -8,7 +8,7 @@
   
   Also project have controllers and tools modules
 
-Project using art resources from [OpenGameArt](http://opengameart.org)
+Project using art and music resources from [OpenGameArt](http://opengameart.org)
  * Hero textures - thanks to [Nash](http://opengameart.org/users/nash) - awesome!  
 
 
