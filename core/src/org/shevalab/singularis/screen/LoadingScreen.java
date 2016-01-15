@@ -3,11 +3,15 @@ package org.shevalab.singularis.screen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import org.shevalab.singularis.Singularis;
 
-/**
- * Created by eugeneshevchenko on 15.01.16.
- */
 public class LoadingScreen implements Screen {
+
+    private Singularis singularis;
+
+    public LoadingScreen(Singularis singularis) {
+        this.singularis = singularis;
+    }
 
     @Override
     public void show() {
