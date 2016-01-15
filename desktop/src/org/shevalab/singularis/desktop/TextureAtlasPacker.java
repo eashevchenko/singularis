@@ -1,5 +1,6 @@
 package org.shevalab.singularis.desktop;
 
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 
 public class TextureAtlasPacker {
@@ -12,6 +13,8 @@ public class TextureAtlasPacker {
         TexturePacker.Settings settings = new TexturePacker.Settings();
         settings.maxWidth = 1024;
         settings.maxHeight = 512;
+        settings.fast = true;
+        settings.filterMag = Texture.TextureFilter.MipMap;
         TexturePacker.process(settings,INPUT_DIR, OUTPUT_DIR, ATLAS_NAME);
     }
 }
