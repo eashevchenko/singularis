@@ -4,7 +4,7 @@ import com.badlogic.gdx.tools.texturepacker.TexturePacker;
 
 public class TextureAtlasPacker {
 
-    private static final String INPUT_DIR = "in";
+    private static final String INPUT_DIR = "out";
     private static final String OUTPUT_DIR = "gfx/hero";
     private static final String ATLAS_NAME = "singularis";
 
