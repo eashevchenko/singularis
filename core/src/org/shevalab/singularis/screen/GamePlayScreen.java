@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.badlogic.gdx.utils.viewport.FillViewport;
+import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 public class GamePlayScreen implements Screen {
@@ -28,7 +28,7 @@ public class GamePlayScreen implements Screen {
         screenWidth = Gdx.graphics.getWidth();
         screenHeigth = Gdx.graphics.getHeight();
         orthographicCamera = new OrthographicCamera();
-        viewport = new FillViewport(screenWidth, screenHeigth, orthographicCamera);
+        viewport = new FitViewport(screenWidth, screenHeigth, orthographicCamera);
         viewport.apply();
         orthographicCamera.position.set(orthographicCamera.viewportWidth / 2, orthographicCamera.viewportHeight / 2, 0);
 

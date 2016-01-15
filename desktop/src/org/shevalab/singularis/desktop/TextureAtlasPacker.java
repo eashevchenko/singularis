@@ -9,6 +9,10 @@ public class TextureAtlasPacker {
     private static final String ATLAS_NAME = "singularis";
 
     public static void main(String... args) {
-        TexturePacker.process(INPUT_DIR, OUTPUT_DIR, ATLAS_NAME);
+        TexturePacker.Settings settings = new TexturePacker.Settings();
+        settings.maxWidth = 1024;
+        settings.maxHeight = 512;
+        settings.fast =true;
+        TexturePacker.process(settings,INPUT_DIR, OUTPUT_DIR, ATLAS_NAME);
     }
 }

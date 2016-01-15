@@ -74,3 +74,17 @@ Idle
   orig: 128, 128
   offset: 0, 0
   index: 9
+Idle
+  rotate: false
+  xy: 392, 132
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 10
+Idle
+  rotate: false
+  xy: 522, 262
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 11
