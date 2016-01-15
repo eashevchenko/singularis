@@ -87,106 +87,18 @@
 					"defaultConfigurationIsVisible" = "0";
 					"defaultConfigurationName" = "Release";
 				};
-			"712EFAE2E5B14D399844CE4E" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default-375w-667h@2x.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default-375w-667h@2x.png";
-				};
 			"66A77AF4B4734C0F840F4496" =
 				{
 					"isa" = "PBXGroup";
 					"children" =
-						("B7A3A0DAD94B4125B9A5A4F2", "712EFAE2E5B14D399844CE4E", "15CAF91E0E0246F0AD62BD23",
- "4ECAC3045D8E4960B3822B43", "894C72074A7A40F69E46EE99", "573EFEDAED4E4A7786F822A4",
- "2F60DD2B247145F69964929A", "B764B73BEB24437B9B8E1305", "9BA75229B41C410B8D5B1CAC",
- "C06F30D0B38148B097C0D2CA", "E3BFEBCDF1B24FA1A2EDFE01", "C088D21417254E5C813B0336"
+						("B7A3A0DAD94B4125B9A5A4F2", "ED7D43451CAF4B1D8839A5BF", "586C5F8152DC488582C7AF1D",
+ "ECCB5A20CFBA4A20BD0CC96A", "FBD6C5F575EA44E893DE443E", "D3AFDEA00EFE472AB6A4A009",
+ "9C0ADEBCBCD44D4AB1469882", "A392C738F63D4D2D9E98515C", "9C3D23FC6979490CB92CB774",
+ "5CEF6BAD002849529437D7D1", "BEE259CF89B2448C85A6BF89", "10AA65832B784652BC86A117"
 );
 					"name" = "Resources";
 					"sourceTree" = "<absolute>";
 					"path" = "/Users/eugeneshevchenko/Documents/Programming/Java/GameDev/LibGDX/myProj/singularis/ios/../android/assets";
-				};
-			"15CAF91E0E0246F0AD62BD23" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default-414w-736h@3x.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default-414w-736h@3x.png";
-				};
-			"4ECAC3045D8E4960B3822B43" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default-568h@2x.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default-568h@2x.png";
-				};
-			"894C72074A7A40F69E46EE99" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default.png";
-				};
-			"573EFEDAED4E4A7786F822A4" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default@2x.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default@2x.png";
-				};
-			"2F60DD2B247145F69964929A" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default@2x~ipad.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default@2x~ipad.png";
-				};
-			"B764B73BEB24437B9B8E1305" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Default~ipad.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Default~ipad.png";
-				};
-			"9BA75229B41C410B8D5B1CAC" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Icon-72.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Icon-72.png";
-				};
-			"C06F30D0B38148B097C0D2CA" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Icon-72@2x.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Icon-72@2x.png";
-				};
-			"E3BFEBCDF1B24FA1A2EDFE01" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Icon.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Icon.png";
-				};
-			"C088D21417254E5C813B0336" =
-				{
-					"isa" = "PBXFileReference";
-					"name" = "Icon@2x.png";
-					"lastKnownFileType" = "image.png";
-					"sourceTree" = "<group>";
-					"path" = "Icon@2x.png";
 				};
 			"B7A3A0DAD94B4125B9A5A4F2" =
 				{
@@ -212,6 +124,94 @@
 					"name" = "Supporting Files";
 					"sourceTree" = "<absolute>";
 					"path" = "/Users/eugeneshevchenko/Documents/Programming/Java/GameDev/LibGDX/myProj/singularis/ios";
+				};
+			"ED7D43451CAF4B1D8839A5BF" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default-375w-667h@2x.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default-375w-667h@2x.png";
+				};
+			"586C5F8152DC488582C7AF1D" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default-414w-736h@3x.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default-414w-736h@3x.png";
+				};
+			"ECCB5A20CFBA4A20BD0CC96A" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default-568h@2x.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default-568h@2x.png";
+				};
+			"FBD6C5F575EA44E893DE443E" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default.png";
+				};
+			"D3AFDEA00EFE472AB6A4A009" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default@2x.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default@2x.png";
+				};
+			"9C0ADEBCBCD44D4AB1469882" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default@2x~ipad.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default@2x~ipad.png";
+				};
+			"A392C738F63D4D2D9E98515C" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Default~ipad.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Default~ipad.png";
+				};
+			"9C3D23FC6979490CB92CB774" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Icon-72.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Icon-72.png";
+				};
+			"5CEF6BAD002849529437D7D1" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Icon-72@2x.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Icon-72@2x.png";
+				};
+			"BEE259CF89B2448C85A6BF89" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Icon.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Icon.png";
+				};
+			"10AA65832B784652BC86A117" =
+				{
+					"isa" = "PBXFileReference";
+					"name" = "Icon@2x.png";
+					"lastKnownFileType" = "image.png";
+					"sourceTree" = "<group>";
+					"path" = "Icon@2x.png";
 				};
 		};
 	"rootObject" = "100000000000000000000001";
