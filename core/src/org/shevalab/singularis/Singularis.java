@@ -25,8 +25,6 @@ public class Singularis extends ApplicationAdapter {
 		orthographicCamera = new OrthographicCamera(screenWidth, screenHeigth);
 		batch = new SpriteBatch();
 		sprite = new Sprite(new Texture("badlogic.jpg"));
-
-
 	}
 
 	@Override
