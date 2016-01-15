@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class GamePlayScreens implements Screen {
 
-
     float screenHeigth;
     float screenWidth;
 
