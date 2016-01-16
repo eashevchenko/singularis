@@ -2,89 +2,103 @@
 singularis.png
 size: 1024,512
 format: RGBA8888
-filter: Nearest,Nearest
+filter: Nearest,MipMap
 repeat: none
 Idle
   rotate: false
-  xy: 2, 262
+  xy: 2, 344
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 0
 Idle
   rotate: false
-  xy: 2, 132
+  xy: 2, 214
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 1
 Idle
   rotate: false
-  xy: 132, 262
+  xy: 132, 344
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 2
 Idle
   rotate: false
-  xy: 2, 2
+  xy: 2, 84
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 3
 Idle
   rotate: false
-  xy: 132, 132
+  xy: 132, 214
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 4
 Idle
   rotate: false
-  xy: 262, 262
+  xy: 262, 344
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 5
 Idle
   rotate: false
-  xy: 132, 2
+  xy: 132, 84
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 6
 Idle
   rotate: false
-  xy: 262, 132
+  xy: 262, 214
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 7
 Idle
   rotate: false
-  xy: 392, 262
+  xy: 392, 344
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 8
 Idle
   rotate: false
-  xy: 262, 2
+  xy: 262, 84
   size: 128, 128
   orig: 128, 128
   offset: 0, 0
   index: 9
-Idle
+flatDark23
   rotate: false
-  xy: 392, 132
-  size: 128, 128
-  orig: 128, 128
+  xy: 2, 2
+  size: 80, 80
+  orig: 80, 80
   offset: 0, 0
-  index: 10
-Idle
+  index: -1
+flatDark24
   rotate: false
-  xy: 522, 262
-  size: 128, 128
-  orig: 128, 128
+  xy: 392, 262
+  size: 80, 80
+  orig: 80, 80
   offset: 0, 0
-  index: 11
+  index: -1
+flatDark25
+  rotate: false
+  xy: 522, 392
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+flatDark26
+  rotate: false
+  xy: 84, 2
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
