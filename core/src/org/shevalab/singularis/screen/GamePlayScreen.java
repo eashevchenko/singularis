@@ -75,6 +75,7 @@ public class GamePlayScreen implements Screen {
 	    Vector2 landShapePosition = createVector(2, 80);
 	    land = new StaticModel(world, BodyDef.BodyType.StaticBody, landPosition, landShapePosition);
 
+   //   world.setContactListener(new GameContactListener(world));
         initBackground();
         setupMusic();
     }
@@ -151,7 +152,7 @@ public class GamePlayScreen implements Screen {
         orthographicCamera.unproject(new Vector3(spritePos.x, spritePos.y, 0));
         orthographicCamera.update();
 
-        gameWorld.updateEnemies(delta);
+        gameWorld.updateEnemies();
 
 
         //batch.setProjectionMatrix(orthographicCamera.combined);

@@ -9,14 +9,15 @@ public class Enemy extends DynamicModels {
 
 
     public Enemy(World world, Vector2 position) {
-        super(1, 1);
+        super(40, 60);
 	    bodyDef.position.set(position);
 	    modelBody = world.createBody(bodyDef);
 	    modelBody.createFixture(fixtureDef);
+        modelBody.getFixtureList().get(0).setUserData("p");
     }
 
-    public void move(float delta){
-       getModelBody().setLinearVelocity(new Vector2(-1f*delta, getModelBody().getLinearVelocity().y));
+    public void move(){
+        getModelBody().setLinearVelocity(new Vector2(1f, getModelBody().getLinearVelocity().y));
     }
 
     @Override

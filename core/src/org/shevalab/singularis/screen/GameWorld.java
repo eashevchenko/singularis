@@ -1,5 +1,6 @@
 package org.shevalab.singularis.screen;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
@@ -21,6 +22,7 @@ public class GameWorld implements Disposable{
     private Pool<Enemy> enemyPool;
 
 
+
     public GameWorld(World world, Box2DDebugRenderer renderer) {
         this.world = world;
         this.renderer = renderer;
@@ -31,17 +33,20 @@ public class GameWorld implements Disposable{
         enemyPool = new Pool<Enemy>(20, 20) {
             @Override
             protected Enemy newObject() {
-                return new Enemy(world, new Vector2(1,1));
+                return new Enemy(world, new Vector2(1,4));
             }
         };
 
 
     }
 
-    public void updateEnemies(float delta){
+    public void updateEnemies(){
         Enemy enemy = enemyPool.obtain();
         enemies.add(enemy);
-        enemy.move(delta);
+        for(Enemy e: enemies){
+            e.move();
+        }
+        Gdx.app.log("[enemy spawn]",enemies.size+"");
     }
 
 
@@ -53,5 +58,6 @@ public class GameWorld implements Disposable{
     @Override
     public void dispose() {
         world.dispose();
+        enemyPool.clear();
     }
 }
