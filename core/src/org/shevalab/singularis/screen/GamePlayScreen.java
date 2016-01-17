@@ -50,6 +50,8 @@ public class GamePlayScreen implements Screen {
 
     Player player;
 
+    GameWorld gameWorld;
+
 
     @Override
     public void show() {
@@ -61,6 +63,9 @@ public class GamePlayScreen implements Screen {
 
         initShaders();
         setupCamera();
+
+        gameWorld = new GameWorld(world,renderer);
+        gameWorld.initEnemies();
 
 	    Vector2 playerPosition = createVector(2, 80);
 	    player = new Player(world, playerPosition);
@@ -145,6 +150,8 @@ public class GamePlayScreen implements Screen {
         world.step(1 / 60f, 6, 2);
         orthographicCamera.unproject(new Vector3(spritePos.x, spritePos.y, 0));
         orthographicCamera.update();
+
+        gameWorld.updateEnemies(delta);
 
 
         //batch.setProjectionMatrix(orthographicCamera.combined);
