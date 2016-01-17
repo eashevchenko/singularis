@@ -1,18 +1,19 @@
 package org.shevalab.singularis.desktop;
 
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.io.IOException;
-import java.awt.Graphics2D;
+import java.net.URISyntaxException;
 
 public class ImageResizer {
 
-    public static void resize(String inputImagePath,
+    public static void resize(File inputFile,
                               String outputImagePath, int scaledWidth, int scaledHeight)
             throws IOException {
 
-        File inputFile = new File(inputImagePath);
         BufferedImage inputImage = ImageIO.read(inputFile);
 
         BufferedImage outputImage = new BufferedImage(scaledWidth,
@@ -28,24 +29,27 @@ public class ImageResizer {
         ImageIO.write(outputImage, formatName, new File(outputImagePath));
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws URISyntaxException {
 
         int scaledWidth = 128;
         int scaledHeight = 128;
 
-        for (int i = 0; i <= 11; i++) {
-            String inputImagePath = "in/Idle_0"+formatNumber(i)+".png";
-            String outputImagePath1 = "out/Idle_0"+formatNumber(i)+".png";
-            System.out.println(inputImagePath);
-            System.out.println(outputImagePath1);
-            try {
-
-                ImageResizer.resize(inputImagePath, outputImagePath1, scaledWidth, scaledHeight);
-            } catch (IOException ex) {
-                System.out.println("Error resizing the image.");
-                ex.printStackTrace();
-            }
-        }
+	    File file = new File("in");
+	    if(file.isDirectory()){
+		    File[] idles = file.listFiles(new FilenameFilter() {
+			    @Override
+			    public boolean accept(File dir, String name) {
+				    return name.startsWith("Idle");
+			    }
+		    });
+		    for(File inFile : idles) {
+			    try {
+				    ImageResizer.resize(inFile, "out/" + file.getName(), scaledWidth, scaledHeight);
+			    } catch (IOException e) {
+				    e.printStackTrace();
+			    }
+		    }
+	    }
     }
 
     private static String formatNumber(int i){
