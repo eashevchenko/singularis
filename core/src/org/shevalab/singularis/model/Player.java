@@ -8,7 +8,7 @@ import net.dermetfan.gdx.graphics.g2d.AnimatedSprite;
 
 import static org.shevalab.singularis.utils.Constants.PPM;
 
-public class Player extends  DynamicModels{
+public class Player extends DynamicModels {
 
 
     public Player(World world, Vector2 position) {

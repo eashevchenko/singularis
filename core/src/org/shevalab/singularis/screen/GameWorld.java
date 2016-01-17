@@ -28,7 +28,7 @@ public class GameWorld implements Disposable{
     }
 
     public void initEnemies() {
-        enemyPool = new Pool<Enemy>() {
+        enemyPool = new Pool<Enemy>(20, 20) {
             @Override
             protected Enemy newObject() {
                 return new Enemy(world, new Vector2(1,1));
@@ -39,7 +39,7 @@ public class GameWorld implements Disposable{
     }
 
     public void updateEnemies(float delta){
-        Enemy  enemy= enemyPool.obtain();
+        Enemy enemy = enemyPool.obtain();
         enemies.add(enemy);
         enemy.move(delta);
     }

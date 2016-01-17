@@ -4,10 +4,11 @@ import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.FixtureDef;
 import com.badlogic.gdx.physics.box2d.PolygonShape;
+import com.badlogic.gdx.utils.Pool;
 
 import static org.shevalab.singularis.utils.Constants.PPM;
 
-public abstract class DynamicModels {
+public abstract class DynamicModels implements Pool.Poolable {
 
     protected Body modelBody;
     protected BodyDef bodyDef;
@@ -38,4 +39,7 @@ public abstract class DynamicModels {
     public PolygonShape getPolygonShape() {
         return polygonShape;
     }
+
+	@Override
+	public void reset() {}
 }
