@@ -7,9 +7,6 @@ import com.badlogic.gdx.physics.box2d.PolygonShape;
 
 import static org.shevalab.singularis.utils.Constants.PPM;
 
-/**
- * Created by eugeneshevchenko on 16.01.16.
- */
 public abstract class DynamicModels {
 
     protected Body modelBody;

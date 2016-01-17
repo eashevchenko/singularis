@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import net.dermetfan.gdx.graphics.g2d.AnimatedSprite;
 
 import static org.shevalab.singularis.utils.Constants.PPM;
@@ -12,14 +11,11 @@ import static org.shevalab.singularis.utils.Constants.PPM;
 public class Player extends  DynamicModels{
 
 
-
-    public Player(Viewport viewport, World world, Vector2 position) {
+    public Player(World world, Vector2 position) {
         super(40, 60);
-        bodyDef.position.set(viewport.getWorldWidth() / 2, 80 / PPM);
+        bodyDef.position.set(position);
         modelBody = world.createBody(bodyDef);
         modelBody.createFixture(fixtureDef);
-
-
     }
 
     public void updatePlayerSprite(Animation animation) {

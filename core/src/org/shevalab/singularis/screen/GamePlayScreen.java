@@ -21,7 +21,8 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import org.shevalab.singularis.Controller;
 import org.shevalab.singularis.model.Player;
 import org.shevalab.singularis.model.StaticModel;
-import static org.shevalab.singularis.utils.Constants.*;
+
+import static org.shevalab.singularis.utils.Constants.PPM;
 
 public class GamePlayScreen implements Screen {
 
@@ -61,10 +62,13 @@ public class GamePlayScreen implements Screen {
         initShaders();
         setupCamera();
 
-        player = new Player(viewport, world, /*fixme: position use it*/ null);
+	    Vector2 playerPosition = createVector(2, 80);
+	    player = new Player(world, playerPosition);
         player.updatePlayerSprite(getPlayerSprite());
 
-        land = new StaticModel(viewport, world, BodyDef.BodyType.StaticBody, /*fixme: position use it*/ null);
+	    Vector2 landPosition = createVector(2);
+	    Vector2 landShapePosition = createVector(2, 80);
+	    land = new StaticModel(world, BodyDef.BodyType.StaticBody, landPosition, landShapePosition);
 
         initBackground();
         setupMusic();
@@ -107,41 +111,13 @@ public class GamePlayScreen implements Screen {
         batch.setProjectionMatrix(orthographicCamera.combined);
     }
 
+	private Vector2 createVector(int xDivider, int yDivisor){
+		return new Vector2(viewport.getWorldWidth() / xDivider, yDivisor / PPM);
+	}
 
-   /* private void createPlayerPhysicsBody() {
-        BodyDef bodyDef = new BodyDef();
-        bodyDef.type = BodyDef.BodyType.DynamicBody;
-        bodyDef.position.set(viewport.getWorldWidth() / 2, 80 / PPM);
-        playerBody = world.createBody(bodyDef);
-
-        FixtureDef fixtureDef = new FixtureDef();
-        PolygonShape shape = new PolygonShape();
-        shape.setAsBox(40 / PPM, 60 / PPM);
-
-        fixtureDef.shape = shape;
-        playerBody.createFixture(fixtureDef);
-
-        playerBody.setUserData(sprite);
-
-        *//*MassData data = playerBody.getMassData();
-        data.center.set(10, 10);
-        playerBody.setMassData(data);*//*
-
-    }*/
-
-   /* private void createLandPhysicsBody() {
-        BodyDef bodyDef = new BodyDef();
-        bodyDef.position.set(viewport.getWorldWidth() / 2, 0);
-        bodyDef.type = BodyDef.BodyType.StaticBody;
-        landBody = world.createBody(bodyDef);
-
-        FixtureDef fixtureDef = new FixtureDef();
-        PolygonShape polygonShape = new PolygonShape();
-        polygonShape.setAsBox(viewport.getWorldWidth() / 2, 80 / PPM);
-
-        fixtureDef.shape = polygonShape;
-        landBody.createFixture(fixtureDef);
-    }*/
+	private Vector2 createVector(int xDivider){
+		return new Vector2(viewport.getWorldWidth() / xDivider, 0);
+	}
 
     private void handleInput() {
         if (controller.isLeftPressed()) {
