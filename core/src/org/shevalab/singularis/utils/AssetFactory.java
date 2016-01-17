@@ -1,6 +1,8 @@
 package org.shevalab.singularis.utils;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.utils.Array;
 
 public class AssetFactory {
@@ -36,6 +38,9 @@ public class AssetFactory {
 
     public void load() {
         // loading assets from AssetManager implementation here...
+        assets.load(null, Texture.class);
+        assets.load(null, Music.class);
+
     }
 
     public Array<String> getLoaded() {
@@ -57,12 +62,8 @@ public class AssetFactory {
     public static AssetFactory getInstance() {
         AssetFactory localInstance = instance;
         if (localInstance == null) {
-            synchronized (AssetFactory.class) {
-                localInstance = instance;
-                if (localInstance == null) {
-                    instance = localInstance = new AssetFactory();
-                }
-            }
+            instance = localInstance = new AssetFactory();
+
         }
         return localInstance;
     }

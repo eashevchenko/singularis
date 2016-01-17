@@ -74,6 +74,20 @@ Idle
   orig: 128, 128
   offset: 0, 0
   index: 9
+Idle
+  rotate: false
+  xy: 392, 214
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 10
+Idle
+  rotate: false
+  xy: 522, 344
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: 11
 flatDark23
   rotate: false
   xy: 2, 2
@@ -83,21 +97,21 @@ flatDark23
   index: -1
 flatDark24
   rotate: false
-  xy: 392, 262
+  xy: 392, 132
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 flatDark25
   rotate: false
-  xy: 522, 392
+  xy: 522, 262
   size: 80, 80
   orig: 80, 80
   offset: 0, 0
   index: -1
 flatDark26
   rotate: false
-  xy: 84, 2
+  xy: 652, 392
   size: 80, 80
   orig: 80, 80
   offset: 0, 0

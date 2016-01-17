@@ -33,9 +33,9 @@ public class ImageResizer {
         int scaledWidth = 128;
         int scaledHeight = 128;
 
-        for (int i = 0; i < 10; i++) {
-            String inputImagePath = "in/Idle_00"+i+".png";
-            String outputImagePath1 = "out/Idle_00"+i+".png";
+        for (int i = 0; i <= 11; i++) {
+            String inputImagePath = "in/Idle_0"+formatNumber(i)+".png";
+            String outputImagePath1 = "out/Idle_0"+formatNumber(i)+".png";
             System.out.println(inputImagePath);
             System.out.println(outputImagePath1);
             try {
@@ -46,6 +46,11 @@ public class ImageResizer {
                 ex.printStackTrace();
             }
         }
+    }
+
+    private static String formatNumber(int i){
+        String format = i < 10 ? "0%d" : "%d";
+        return String.format(format, i);
     }
 
 }

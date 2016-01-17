@@ -13,32 +13,32 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.*;
+import com.badlogic.gdx.physics.box2d.BodyDef;
+import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.viewport.FillViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import net.dermetfan.gdx.graphics.g2d.AnimatedSprite;
 import org.shevalab.singularis.Controller;
+import org.shevalab.singularis.model.Player;
+import org.shevalab.singularis.model.StaticModel;
+import static org.shevalab.singularis.utils.Constants.*;
 
 public class GamePlayScreen implements Screen {
 
     int screenHeigth;
     int screenWidth;
 
-    final float PPM = 100;
-
     OrthographicCamera orthographicCamera;
     Viewport viewport;
     SpriteBatch batch;
-    AnimatedSprite sprite;
 
     World world;
     Box2DDebugRenderer renderer;
-    Body playerBody, landBody;
+    StaticModel land;
 
     Texture bg, bg2;
 
     TextureAtlas textureAtlas;
-    Animation animation;
 
 
     Controller controller;
@@ -46,6 +46,8 @@ public class GamePlayScreen implements Screen {
     String vertexShader;
     String fragmentShader;
     ShaderProgram shaderProgram;
+
+    Player player;
 
 
     @Override
@@ -58,9 +60,12 @@ public class GamePlayScreen implements Screen {
 
         initShaders();
         setupCamera();
-        createPlayerPhysicsBody();
-        createLandPhysicsBody();
-        initPlayerSprite();
+
+        player = new Player(viewport, world, /*fixme: position use it*/ null);
+        player.updatePlayerSprite(getPlayerSprite());
+
+        land = new StaticModel(viewport, world, BodyDef.BodyType.StaticBody, /*fixme: position use it*/ null);
+
         initBackground();
         setupMusic();
     }
@@ -78,10 +83,9 @@ public class GamePlayScreen implements Screen {
         bg2 = new Texture("gfx/bg/bg2.png");
     }
 
-    private void initPlayerSprite() {
+    private Animation getPlayerSprite() {
         textureAtlas = new TextureAtlas(Gdx.files.internal("gfx/hero/singularis.atlas"));
-        animation = new Animation(1f / 14f, textureAtlas.findRegions("Idle"), Animation.PlayMode.LOOP_PINGPONG);
-        sprite = new AnimatedSprite(animation);
+        return new Animation(1f / 14f, textureAtlas.findRegions("Idle"), Animation.PlayMode.LOOP_PINGPONG);
     }
 
     private void initShaders() {
@@ -104,7 +108,7 @@ public class GamePlayScreen implements Screen {
     }
 
 
-    private void createPlayerPhysicsBody() {
+   /* private void createPlayerPhysicsBody() {
         BodyDef bodyDef = new BodyDef();
         bodyDef.type = BodyDef.BodyType.DynamicBody;
         bodyDef.position.set(viewport.getWorldWidth() / 2, 80 / PPM);
@@ -119,13 +123,13 @@ public class GamePlayScreen implements Screen {
 
         playerBody.setUserData(sprite);
 
-        /*MassData data = playerBody.getMassData();
+        *//*MassData data = playerBody.getMassData();
         data.center.set(10, 10);
-        playerBody.setMassData(data);*/
+        playerBody.setMassData(data);*//*
 
-    }
+    }*/
 
-    private void createLandPhysicsBody() {
+   /* private void createLandPhysicsBody() {
         BodyDef bodyDef = new BodyDef();
         bodyDef.position.set(viewport.getWorldWidth() / 2, 0);
         bodyDef.type = BodyDef.BodyType.StaticBody;
@@ -137,15 +141,15 @@ public class GamePlayScreen implements Screen {
 
         fixtureDef.shape = polygonShape;
         landBody.createFixture(fixtureDef);
-    }
+    }*/
 
     private void handleInput() {
         if (controller.isLeftPressed()) {
-            playerBody.setLinearVelocity(new Vector2(-1f, playerBody.getLinearVelocity().y));
+            player.getModelBody().setLinearVelocity(new Vector2(-1f, player.getBodyLinearVelocityY()));
         } else if (controller.isRightPressed()) {
-            playerBody.setLinearVelocity(new Vector2(1f, playerBody.getLinearVelocity().y));
-        } else if (controller.isUpPressed() && playerBody.getLinearVelocity().y == 0) {
-            playerBody.applyLinearImpulse(new Vector2(0, 5f), playerBody.getWorldCenter(), true);
+            player.getModelBody().setLinearVelocity(new Vector2(1f, player.getBodyLinearVelocityY()));
+        } else if (controller.isUpPressed() && player.getBodyLinearVelocityY() == 0) {
+            player.getModelBody().applyLinearImpulse(new Vector2(0, 5f), player.getModelBody().getWorldCenter(), true);
         }
 
         if (Gdx.input.isKeyPressed(Input.Keys.C)) {
@@ -160,21 +164,24 @@ public class GamePlayScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         Gdx.gl.glViewport(0, 0, screenWidth, screenHeigth);
 
-        Vector2 spritePos = new Vector2(playerBody.getPosition().x * PPM - sprite.getWidth() / 3, playerBody.getPosition().y * PPM - sprite.getHeight() / 2);
+        Vector2 spritePos = player.getBodyPosition();
 
         world.step(1 / 60f, 6, 2);
         orthographicCamera.unproject(new Vector3(spritePos.x, spritePos.y, 0));
         orthographicCamera.update();
 
 
-  //      batch.setProjectionMatrix(orthographicCamera.combined);
+        //batch.setProjectionMatrix(orthographicCamera.combined);
         batch.begin();
         batch.draw(bg, 0, 0);
         batch.draw(bg2, 0, 0);
-        sprite.draw(batch);
+
+        player.drawPlayer(batch);
+       //sprite.draw(batch);
         batch.end();
-        sprite.setPosition(spritePos.x, spritePos.y);
-        sprite.update(delta);
+        player.updatePosition(delta, spritePos);
+        //sprite.setPosition(spritePos.x, spritePos.y);
+        //sprite.update(delta);
 
         renderer.render(world, orthographicCamera.combined);
 
